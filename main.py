@@ -23,9 +23,9 @@ poligono_upload = st.sidebar.file_uploader('Escolha o polígono:')
 
 raster_upload = st.sidebar.file_uploader('Escolha o raster a ser utilizado na análise (Mapbiomas):')
 
-embargos_ibama = 'webgis_study/data/adm_embargos_ibama_a_mt.parquet'
-municipios_mt = 'webgis_study/data/BR_Municipios_2024_b0_mt.shp'
-uso_consolidado = 'webgis_study/data/USO_CONSOLIDADO_b0_porto_esperidiao.shp'
+embargos_ibama = 'adm_embargos_ibama_a_mt.parquet''
+municipios_mt = 'BR_Municipios_2024_b0_mt.shp'
+uso_consolidado = 'USO_CONSOLIDADO_b0_porto_esperidiao.shp'
 
 # adicionar depois dados do IBGE e autos de infração
 
@@ -233,4 +233,5 @@ if poligono_upload:
 
 
     st.plotly_chart(plot,use_container_width=True);
+
 
