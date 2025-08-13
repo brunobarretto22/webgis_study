@@ -1,10 +1,11 @@
 folium
 geopandas
 numpy
-opencv_python
+opencv_python_headless
 pandas
 plotly
 rasterio
 streamlit
 streamlit_folium
+
 
