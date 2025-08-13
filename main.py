@@ -23,9 +23,9 @@ poligono_upload = st.sidebar.file_uploader('Escolha o polígono:')
 
 raster_upload = st.sidebar.file_uploader('Escolha o raster a ser utilizado na análise (Mapbiomas):')
 
-embargos_ibama = 'data/adm_embargos_ibama_a_mt.parquet'
-municipios_mt = 'data/BR_Municipios_2024_b0_mt.shp'
-uso_consolidado = 'data/USO_CONSOLIDADO_b0_porto_esperidiao.shp'
+embargos_ibama = 'adm_embargos_ibama_a_mt.shp'
+municipios_mt = 'BR_Municipios_2024_b0_mt.shp'
+uso_consolidado = 'USO_CONSOLIDADO_b0_porto_esperidiao.shp'
 
 # adicionar depois dados do IBGE e autos de infração
 
@@ -37,7 +37,7 @@ if poligono_upload:
 
     @st.cache_resource
     def abrir_embargo():
-        gdf_embargo = gpd.read_parquet(embargos_ibama)
+        gdf_embargo = gpd.read_file(embargos_ibama)
         return gdf_embargo
     
     gdf_embargo = abrir_embargo()
@@ -233,6 +233,7 @@ if poligono_upload:
 
 
     st.plotly_chart(plot,use_container_width=True);
+
 
 
 
